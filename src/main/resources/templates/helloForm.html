@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: head"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Template</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+    <body>
+        <form method="post" action="/hello">
+            <input type="text" name="name">
+            <button type="submit">Say Hello!</button>
+        </form>
+        <div th:replace="template :: footer"></div>
+    </body>
+</html>
