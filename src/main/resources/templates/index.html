@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="template :: head"></head>>
+<!--    <head th:replace="template :: head"></head>-->
+    <title>Good Thymes Virtual Grocery</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
 <body>
-    <h1 th:text="${message}"></h1>
+
+    <p th:text="#{home.welcome}">Welcome to our grocery store!</p>
+
+
     <div th:replace="template :: footer"></div>
 </body>
 </html>

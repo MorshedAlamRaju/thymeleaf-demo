@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2 th:text="${student.name}"></h2>
+    <h3 th:text="${student.id}"></h3>
+    <td>
+        <span th:if="${student.gender} == 'M'" th:text="Male" />
+        <span th:unless="${student.gender} == 'M'" th:text="Female" />
+    </td>
+    <td th:switch="${student.gender}">
+        <span th:case="'M'" th:text="Male" />
+        <span th:case="'F'" th:text="Female" />
+    </td>
+    <tbody>
+
+    <form action="#" th:action="@{/saveStudent}" th:object="${student}" method="post">
+        <table border="1">
+            <tr>
+                <td><label th:text="#{student.id}" /></td>
+                <td><input type="number" th:field="*{id}" /></td>
+            </tr>
+            <tr>
+                <td><label th:text="#{student.name}" /></td>
+                <td><input type="text" th:field="*{name}" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+</html>
